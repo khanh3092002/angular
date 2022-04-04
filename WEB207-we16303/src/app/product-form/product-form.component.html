@@ -1,0 +1,11 @@
+<h1 *ngIf="id!==undefined">chỉnh sửa sản phầm {{productDetail.name}}</h1>
+<h1 *ngIf="id===undefined">Thêm sản phẩm</h1>
+
+<form action="" class="form" #productForm="ngForm" (submit)="onsubmit(productForm.value)">
+    <input *ngIf="id" type="hidden" [(ngModel)]="productDetail.id" name="id"><br>
+    <input type="text" placeholder="Tên" [(ngModel)]="productDetail.name" name="name"><br>
+    <input type="text" placeholder="mô tả" [(ngModel)]="productDetail.desc" name="desc"><br>
+    <input type="text" placeholder="giá" [(ngModel)]="productDetail.price" name="price"><br>
+    <button class="btn btn-success">Submit</button>
+   
+</form>
